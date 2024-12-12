@@ -2,7 +2,7 @@
 
 namespace App\features\tasks\domain\entity;
 
-class TaskEntity
+final class TaskEntity
 {
     public function __construct(
         public ?int $id = null,

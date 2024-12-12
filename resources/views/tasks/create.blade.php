@@ -7,7 +7,6 @@
     <div>
         <form method="POST" action="{{ route('task.store') }}">
             @csrf
-            <p>jhfsdjkfhdkjf sjd</p>
             <label for="">Title</label>
             <input name="title" type="text" value=""><br>
 

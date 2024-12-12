@@ -20,3 +20,11 @@ Route::group(['prefix' => '/task'], function () {
     Route::delete('/{id}/destroy', [TaskController::class, 'destroy'])->name('task.destroy');
 });
 /* -------------- */
+
+/* Book Reviews Feature */
+Route::group(['prefix' => '/books-reviews'], function () {
+    Route::get('/', function () {
+        return 'Book Reviews Feature';
+    })->name('book-reviews.index');
+});
+/* -------------- */

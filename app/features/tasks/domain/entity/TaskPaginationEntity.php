@@ -2,7 +2,7 @@
 
 namespace App\features\tasks\domain\entity;
 
-class TaskPaginationEntity
+final class TaskPaginationEntity
 {
     public function __construct(
         public array $tasks = [],

@@ -8,6 +8,8 @@ use App\features\tasks\domain\usecase\AddTaskUseCase;
 use App\features\tasks\domain\usecase\DeleteTaskUseCase;
 use App\features\tasks\domain\usecase\GetTaskUseCase;
 use App\features\tasks\domain\usecase\UpdateTaskUseCase;
+use App\features\tasks\presentation\Http\requests\TaskStoreRequest;
+use App\features\tasks\presentation\Http\requests\TaskUpdateRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -28,7 +30,7 @@ class TaskController extends Controller
         return view('tasks.create');
     }
 
-    public function store(Request $request)
+    public function store(TaskStoreRequest $request)
     {
         $data = $request->all();
         (new AddTaskUseCase($this->taskRepository))->add(
@@ -39,7 +41,7 @@ class TaskController extends Controller
                 completed: isset($data['completed']) ? 1 : 0,
             )
         );
-        return redirect(route('task.index'));
+        return redirect(route('task.index'))->with('message', 'Task has been created');
     }
 
     public function show(string $id)
@@ -54,7 +56,7 @@ class TaskController extends Controller
         return view('tasks.edit',  ['task' => $task]);
     }
 
-    public function update(Request $request, string $id)
+    public function update(TaskUpdateRequest $request, string $id)
     {
         $data = $request->all();
         $task = new TaskEntity(
@@ -64,11 +66,8 @@ class TaskController extends Controller
             longDescription: $request->long_description,
             completed: $request->completed ? true : false,
         );
-        $isUpdated = (new UpdateTaskUseCase($this->taskRepository))->update($task);
-        $redirect = redirect(route('task.show', ['id' => $id]));
-        return $isUpdated
-            ? $redirect->with('message', 'Task has been updated')
-            : $redirect->with('error', 'Error: Faild to update');
+        (new UpdateTaskUseCase($this->taskRepository))->update($task);
+        return redirect(route('task.show', ['id' => $id]))->with('message', 'Task has been updated');
     }
 
     public function destroy(string $id)

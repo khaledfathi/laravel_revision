@@ -6,7 +6,7 @@ use App\features\tasks\domain\entity\TaskEntity;
 use App\features\tasks\domain\entity\TaskPaginationEntity;
 use App\features\tasks\domain\repository\TaskRepositoryInterface;
 
-class GetTaskUseCase {
+final class GetTaskUseCase {
     public function __construct(
         public TaskRepositoryInterface $taskRepository
     ){}

@@ -8,7 +8,7 @@ use App\features\tasks\domain\entity\TaskPaginationEntity;
 use App\features\tasks\domain\repository\TaskRepositoryInterface;
 use Illuminate\Database\Eloquent\Collection;
 
-class TaskRepository implements TaskRepositoryInterface
+final class TaskRepository implements TaskRepositoryInterface
 {
     public function index(): array|TaskEntity
     {

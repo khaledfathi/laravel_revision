@@ -4,7 +4,7 @@ namespace App\features\tasks\domain\usecase;
 
 use App\features\tasks\domain\repository\TaskRepositoryInterface;
 
-class DeleteTaskUseCase {
+final class DeleteTaskUseCase {
 
     public function __construct(
         public TaskRepositoryInterface $TaskRepositroy

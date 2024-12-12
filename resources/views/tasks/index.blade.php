@@ -18,6 +18,9 @@
     <div>
         <h3>Task Note App Content</h3>
         <a href="{{route('task.create')}}">New Task</a>
+        @if (session('message'))
+           <p>{{session('message')}}</p> 
+        @endif
         @if ($data->tasks)
             <ul>
                 @foreach ($data->tasks as $task)
