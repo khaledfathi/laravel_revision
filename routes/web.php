@@ -1,7 +1,7 @@
 <?php
 
-use App\features\root\presentation\Http\controllers\RootController;
-use App\features\tasks\presentation\Http\controllers\TaskController;
+use App\features\root\presentation\controllers\RootController;
+use App\features\tasks\presentation\controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 
 /* Root Feature */
@@ -24,7 +24,7 @@ Route::group(['prefix' => '/task'], function () {
 /* Book Reviews Feature */
 Route::group(['prefix' => '/books-reviews'], function () {
     Route::get('/', function () {
-        return 'Book Reviews Feature';
+        return view('book_reviews.index');
     })->name('book-reviews.index');
 });
 /* -------------- */

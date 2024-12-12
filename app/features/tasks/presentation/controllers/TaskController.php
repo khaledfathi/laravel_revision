@@ -1,6 +1,6 @@
 <?php
 
-namespace App\features\tasks\presentation\Http\controllers;
+namespace App\features\tasks\presentation\controllers;
 
 use App\features\tasks\data\repository\TaskRepository;
 use App\features\tasks\domain\entity\TaskEntity;
@@ -8,8 +8,8 @@ use App\features\tasks\domain\usecase\AddTaskUseCase;
 use App\features\tasks\domain\usecase\DeleteTaskUseCase;
 use App\features\tasks\domain\usecase\GetTaskUseCase;
 use App\features\tasks\domain\usecase\UpdateTaskUseCase;
-use App\features\tasks\presentation\Http\requests\TaskStoreRequest;
-use App\features\tasks\presentation\Http\requests\TaskUpdateRequest;
+use App\features\tasks\presentation\requests\TaskStoreRequest;
+use App\features\tasks\presentation\requests\TaskUpdateRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 

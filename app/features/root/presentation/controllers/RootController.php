@@ -1,6 +1,6 @@
 <?php
 
-namespace App\features\root\presentation\Http\controllers;
+namespace App\features\root\presentation\controllers;
 use App\Http\Controllers\Controller;
 
 class RootController extends Controller{

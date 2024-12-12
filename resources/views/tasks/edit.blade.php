@@ -1,4 +1,4 @@
-@extends('tasks.layouts.main-task-layout')
+@extends('tasks.layouts.main-layout')
 @section('title', 'Edit Task')
 
 @if ($task)
