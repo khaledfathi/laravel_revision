@@ -1,5 +1,6 @@
 <?php
 namespace App\features\tasks\domain\repository;
+
 use App\features\tasks\domain\entity\TaskEntity;
 use App\features\tasks\domain\entity\TaskPaginationEntity;
 

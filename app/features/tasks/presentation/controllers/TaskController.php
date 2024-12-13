@@ -16,7 +16,7 @@ class TaskController extends Controller
     public function __construct()
     {
         $this->taskRepository = new TaskRepository();
-        $this->taskCommand = new TaskCommand();
+        $this->taskCommand = new TaskCommand($this->taskRepository);
     }
 
     public function index()

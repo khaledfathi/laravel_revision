@@ -2,7 +2,6 @@
 
 namespace App\features\tasks\domain\command;
 
-use App\features\tasks\data\repository\TaskRepository;
 use App\features\tasks\domain\entity\TaskEntity;
 use App\features\tasks\domain\entity\TaskPaginationEntity;
 use App\features\tasks\domain\repository\TaskRepositoryInterface;
@@ -17,14 +16,14 @@ use App\features\tasks\domain\usecase\UpdateTaskUseCase;
 
 class TaskCommand
 {
-    private TaskRepositoryInterface $taskRepository;
     private GetTaskUseCaseInterface $getTaskUseCase;
     private  AddTaskUseCaseInterface $addTaskUseCase;
     private UpdateTaskUseCaseInterface $updateTaskUseCase;
     private DeleteTaskUseCaseInterface $deleteTaskUseCase;
-    public function __construct()
+    public function __construct(
+        private TaskRepositoryInterface $taskRepository
+    )
     {
-        $this->taskRepository = new TaskRepository();
         $this->getTaskUseCase = new GetTaskUseCase($this->taskRepository);
         $this->addTaskUseCase = new AddTaskUseCase($this->taskRepository);
         $this->updateTaskUseCase = new UpdateTaskUseCase($this->taskRepository);
