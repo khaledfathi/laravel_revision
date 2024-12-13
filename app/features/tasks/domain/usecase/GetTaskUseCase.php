@@ -5,8 +5,9 @@ namespace App\features\tasks\domain\usecase;
 use App\features\tasks\domain\entity\TaskEntity;
 use App\features\tasks\domain\entity\TaskPaginationEntity;
 use App\features\tasks\domain\repository\TaskRepositoryInterface;
+use App\features\tasks\domain\usecase\boundray\GetTaskUseCaseInterface;
 
-final class GetTaskUseCase {
+final class GetTaskUseCase implements GetTaskUseCaseInterface{
     public function __construct(
         public TaskRepositoryInterface $taskRepository
     ){}
