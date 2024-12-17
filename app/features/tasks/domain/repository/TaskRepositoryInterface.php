@@ -1,4 +1,6 @@
 <?php
+declare(strict_type=1);
+
 namespace App\features\tasks\domain\repository;
 
 use App\features\tasks\domain\entity\TaskEntity;

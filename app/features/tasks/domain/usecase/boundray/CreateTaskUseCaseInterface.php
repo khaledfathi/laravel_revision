@@ -5,7 +5,6 @@ namespace App\features\tasks\domain\usecase\boundray;
 
 use App\features\tasks\domain\entity\TaskEntity;
 
-interface UpdateTaskUseCaseInterface
-{
-    public function update(TaskEntity $task) :bool;
+interface CreateTaskUseCaseInterface  {
+    public function create (TaskEntity $task):int;
 }

@@ -1,4 +1,5 @@
 <?php
+declare(strict_type=1);
 
 namespace App\features\tasks\domain\usecase;
 
@@ -7,7 +8,7 @@ use App\features\tasks\domain\entity\TaskPaginationEntity;
 use App\features\tasks\domain\repository\TaskRepositoryInterface;
 use App\features\tasks\domain\usecase\boundray\GetTaskUseCaseInterface;
 
-final class GetTaskUseCase implements GetTaskUseCaseInterface{
+class GetTaskUseCase implements GetTaskUseCaseInterface{
     public function __construct(
         public TaskRepositoryInterface $taskRepository
     ){}

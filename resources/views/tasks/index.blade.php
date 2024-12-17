@@ -24,7 +24,7 @@
         @if ($data->tasks)
             <ul>
                 @foreach ($data->tasks as $task)
-                    <li><a href="{{route('task.show', ['id'=>$task->id])}}">{{$task->title}}</a></li>
+                    <li><a href="{{route('task.show', ['id'=>$task->id])}}">( {{$task->id}} ) {{$task->title}}</a></li>
                 @endforeach
             </ul>
             <ul >

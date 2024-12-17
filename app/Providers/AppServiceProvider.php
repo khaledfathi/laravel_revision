@@ -2,8 +2,6 @@
 
 namespace App\Providers;
 
-use App\repositories\contract\TaskRepositoryContract;
-use App\repositories\TaskRepository;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider

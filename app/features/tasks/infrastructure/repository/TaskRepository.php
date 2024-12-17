@@ -1,11 +1,12 @@
 <?php
+declare(strict_type=1);
 
-namespace App\features\tasks\data\repository;
+namespace App\features\tasks\infrastructure\repository;
 
-use App\features\tasks\data\model\TaskModel;
 use App\features\tasks\domain\entity\TaskEntity;
 use App\features\tasks\domain\entity\TaskPaginationEntity;
 use App\features\tasks\domain\repository\TaskRepositoryInterface;
+use App\features\tasks\infrastructure\model\TaskModel;
 use Illuminate\Database\Eloquent\Collection;
 
 final class TaskRepository implements TaskRepositoryInterface
